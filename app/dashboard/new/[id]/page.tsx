@@ -34,7 +34,7 @@ export default async function DynamicRoute({
 { params: { id: string };
 }) {
   const { getUser } = getKindeServerSession();
-  const user = getUser();
+  const user = await getUser();
   const data = await getData({ userId: user?.id as string, noteId: params.id as string });
 
 
